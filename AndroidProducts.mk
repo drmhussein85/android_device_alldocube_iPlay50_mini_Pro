@@ -6,9 +6,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_iPlay50_mini_Pro.mk
+    $(LOCAL_DIR)/twrp_iPlay50_mini_Pro.mk
 
 COMMON_LUNCH_CHOICES := \
-    omni_iPlay50_mini_Pro-user \
-    omni_iPlay50_mini_Pro-userdebug \
-    omni_iPlay50_mini_Pro-eng
+    twrp_iPlay50_mini_Pro-user \
+    twrp_iPlay50_mini_Pro-userdebug \
+    twrp_iPlay50_mini_Pro-eng
