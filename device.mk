@@ -33,3 +33,15 @@ PRODUCT_PACKAGES += \
     update_engine \
     update_verifier \
     update_engine_sideload
+
+# vendor_boot as recovery
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
+
+# Enable project quotas and casefolding for emulated storage without sdcardfs
+$(call inherit-product, $(SRC_TARGET_DIR)/product /emulated_storage.mk)
+
+
+PRODUCT_PACKAGES += \
+linker.vendor_ramdisk \
+resize2fs.vendor_ramdisk \
+tune2fs.vendor_ramdisk #end: vendor_boot
