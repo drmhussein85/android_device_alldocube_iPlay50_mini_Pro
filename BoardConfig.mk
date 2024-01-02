@@ -127,3 +127,34 @@ TW_SCREEN_BLANK_ON_BOOT := true
 TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_USE_TOOLBOX := true
 TW_INCLUDE_REPACKTOOLS := true
+
+# vendor_boot as recovery
+
+VENDOR_CMDLINE := "console=ttyMSM0,115200n8 \
+androidboot.hardware=qcom \
+androidboot.console=ttyMSM0 \
+androidboot.memcg=1 \
+lpm_levels.sleep_disabled=1 \
+video=vfb:640x400,bpp=32,memsize =3072000 \
+msm_rtb.filter=0x237 \
+service_locator.enable=1 \
+androidboot.usbcontroller=a600000.dwc3 \
+swiotlb=2048 \
+loop.max_part=7 \
+cgroup.memory=nokmem,nosocket \
+reboot=panic_warm \
+androidboot.init_fatal_reboot_target=recovery "
+
+BOARD_BOOT_HEADER_VERSION := 4
+BOARD_USES_RECOVERY_AS_BOOT := false
+BOARD_INCLUDE_RECOVERY_RAMDISK_IN_VENDOR_BOOT := true
+BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
+BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := false
+BOARD_USES_GENERIC_KERNEL_IMAGE := true
+BOARD_MOVE_GSI_AVB_KEYS_TO_ VENDOR_BOOT := true
+
+BOARD_PREBUILT_DTBIMAGE_DIR := $(KERNEL_PATH)/dtbs
+BOARD_INCLUDE_DTB_IN_BOOTIMG := true
+
+BOARD_MKBOOTIMG_AR GS+ = -- vendor _cmdline $( VENDOR _CMDLINE)
+#
