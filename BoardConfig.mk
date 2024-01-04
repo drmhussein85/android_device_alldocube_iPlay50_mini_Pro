@@ -117,3 +117,7 @@ TW_USE_TOOLBOX := true
 TW_INCLUDE_REPACKTOOLS := true
 
 
+#support header version 4
+
+BOARD_BOOT_HEADER_VERSION := 4
+BOARD_RAMDISK_USE_LZ4 := true
