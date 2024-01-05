@@ -59,3 +59,13 @@ auto                      vfat     /devices/platform/soc/mt_usb*                
 /dtbo                     emmc     /dev/block/by-name/dtbo                          flags=display=dtbo
 /otp                      emmc     /dev/block/by-name/otp                           flags=display=otp
 /vbmeta                   emmc     /dev/block/by-name/vbmeta                        flags=display=vbmeta
+
+# add this to end of line to enable partition backup and flash​
+
+;backup=1;flashimg
+
+# add those to enable sdcard and otg​
+
+# Removable storage
+/external_sd    vfat        /dev/block/mmcblk1p1    /dev/block/mmcblk1        flags=storage;wipeingui;removable
+/usb-otg    auto        /dev/block/sda1    /dev/block/sda                flags=display="USB-OTG";storage;wipeingui;removable 
